@@ -2,6 +2,62 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+int string_length(char *str)
+{
+    int while_counter = 0;
+
+    char *my_char_pointer;  // Pekare till ett tecken i strängen
+    my_char_pointer = str;
+
+    while (*my_char_pointer != '\0')  // *: Är värdet null?
+    {
+        while_counter++;
+        my_char_pointer++;
+    }
+
+    return while_counter;
+}
+
+int main()
+{
+    char my_str[] = "Hello World!";
+
+    int str_len = string_length(my_str);
+
+    printf("%d\n", str_len);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Gör om din stränglängds-räknare till en funktion
+// Funktionen ska
+// Ta ett argument: En sträng
+// Returnera längden på strängen
+
+
+
 void print_int_pointer(int *ptr);
 void print_array(int *arr);
 
@@ -32,13 +88,30 @@ void print_this_string(const char *str)
     printf("%s\n", str);
 }
 
-int main()
+int main2()
 {
+    char my_str[] = "Hello World!";
+
+    char *my_str_ptr = "Hello World!";
+
+    int str_len = string_length(my_str);
+    int str_len2 = string_length(my_str_ptr);
+
+    printf("%d\n", str_len);
+    printf("%d\n", str_len2);
+
+    printf("Sizeof my_str: %d\n", sizeof(str_len));
+    printf("Sizeof my_str_ptr: %d\n", sizeof(str_len2));
+    printf("Sizeof double: %d\n", sizeof(double));
+    printf("Sizeof char: %d\n", sizeof(char));
+    printf("Sizeof int: %d\n", sizeof(int));
+
+    /*
     const char *my_str = get_hello_string();
     printf("%s\n", my_str);
 
     print_this_string(my_str);
-
+*/
     /*
     print_a_number();
 
