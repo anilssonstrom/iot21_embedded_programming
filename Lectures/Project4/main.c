@@ -66,7 +66,24 @@ uint32_t main()
 
     // Vi kan skapa listor med personer
     Person somePeople[] = {p1, p2};
-    // Och indexera i listan
+
+    // ....
+
+    // För att få fram längden av en array måste vi räkna fram den själv
+
+    // Sizeof somePeople-arrayen är storleken på arrayens data!
+    printf("Sizeof somePeople[]: %d\n", sizeof(somePeople));
+
+    // Dividera med storleken för ett element för att få längden
+    printf("Length of somePeople[]: %d\n", sizeof(somePeople) / sizeof(somePeople[0]));
+
+    // Samma sak gäller för alla typer av arrayer. Ex: Heltal.
+    int myArr[] = {1, 2, 3, 4};
+    printf("Length of myArr[]: %d\n", sizeof(myArr) / sizeof(myArr[0]));
+
+    // ....
+
+    // Tillbaka med arbete på arrayer av structar.. Vi kan såklart indexera i listan
     printf("somePeople[1].name: %s\n", somePeople[1].name);
 
     // Vi kan skicka struktar till funktioner
