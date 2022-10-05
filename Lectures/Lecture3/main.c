@@ -42,12 +42,21 @@ int main()
 
     // Läs från en fil
     char line[255]; // Skapa en buffer för att hålla datan vi läser
-    FILE *infile = fopen("indata.txt", "r");  // Öppna filen
+    FILE *infile = fopen("out.txt", "r");  // Öppna filen
+
+    // Om det inte gick att öppna filen:
+    if (infile == NULL)
+    {
+        printf("Error!");
+        exit(0);
+    }
+
+    // EOF - End of file
 
     // Gör en av följande:
-    fscanf(infile, "%s", line);  // Läs första ordet
-    fgets(line, 255, infile);  // Läs första radne
-    fread(line, sizeof(char), 255, infile);  // Läs hela filen (eller max 255 tecken), vilket som är mindre
+    //fscanf(infile, "%s", line);  // Läs första ordet
+    //fgets(line, 255, infile);  // Läs första raden
+    //fread(line, sizeof(char), 255, infile);  // Läs hela filen (eller max 255 tecken), vilket som är mindre
 
     fclose(infile);  // Stäng filen
     printf("%s\n", line);  // Skriv ut det vi läste
@@ -97,7 +106,7 @@ void print_this_string(const char *str)
 {
     printf("%s\n", str);
 }
-
+/*
 int main2()
 {
     // Main omdöpt till main2 för att göra en ny main ovanför.
@@ -234,7 +243,7 @@ int main2()
 
     return 0;
 }
-
+*/
 void print_int_pointer(int *ptr)
 {
     printf("0x%p\n", ptr);  // Skriv ut vilken adress talet ligger lagrat på

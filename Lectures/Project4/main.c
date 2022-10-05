@@ -4,6 +4,9 @@
 #include <inttypes.h>
 #include <stdbool.h>
 
+#include "fib.h"
+#include "fib.h"
+
 // Exempel på en const-global
 const int G_MAXTURNS = 10;
 
@@ -12,22 +15,6 @@ typedef struct person {
     int age;
     char *name;
 } Person;
-
-void fib()
-{
-    /*
-     0 1 1 2 3 5 8 13 21 34
-    */
-    // Varje gång vi anropar fib() så ska den skriva ut nästa tal i fibonacci-serien.
-    static uint32_t a = 0;
-    static uint32_t b = 1;
-
-    uint32_t next = a + b;
-    printf("%" PRIu32 " ", next);
-
-    a = b;
-    b = next;
-}
 
 void PrintHello()
 {
@@ -65,7 +52,28 @@ uint32_t main()
     printf("p1.name: %s\n", p1.name);
 
     // Vi kan skapa listor med personer
-    Person somePeople[] = {p1, p2};
+    Person somePeople[100];
+
+    char *name1;
+    char *name2;
+    char *name3;
+
+    /*
+    name1 = "name1";
+    name2 = "name2";
+    name2 = "name3";
+
+    int intarr[100];
+
+    for (int i=0; i<100; i++)
+    {
+        // Läs in två saker
+        // Stoppa första saken i Name
+        // Stopp andra saken i age
+        somePeople[i].name = ..
+        somePeople[i].age = ...
+    }
+    */
 
     // ....
 
